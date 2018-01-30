@@ -1,0 +1,23 @@
+p {
+  font-weight: bold;
+  font-size: 2em;
+  color: gray;
+  width: 80%;
+  margin: auto;
+  padding-bottom: 10px;
+  text-align: center;
+  text-decoration: line-through;
+  text-transform: uppercase;
+}
+
+a {
+  color: #cd45d;
+}
+
+a:hover {
+  font-size: 1.1em
+}
+
+p a {
+  color: yellow;
+}
