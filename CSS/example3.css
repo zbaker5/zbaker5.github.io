@@ -1,25 +1,102 @@
+html {
+  font-family: 'Ubuntu', sans-serif;
+}
+
 .wrapper {
   margin: auto;
-  text-align: center;
   width: 60%;
+}
+
+.header {
+  text-align: center;
 }
 
 .header h1 {
   display: inline-block;
+  text-align: center;
 }
 
 table, tr, th, td {
-  border: solid 1px black;
   margin: auto;
+}
+
+table {
+  width: 65%;
+  border-collapse: collapse;
 }
 
 .rounddiv {
   width: 40px;
   height: 40px;
-  border-color: black;
+  border: 2px black;
   border-radius: 25px;
+  margin: auto;
 }
 
 .gold {
   background-color: gold;
+}
+
+.silver {
+  background-color: rgba(192, 192, 192, 0.5);
+}
+
+.bronze {
+  background-color: #CD7F32;
+}
+
+.rhodium {
+  background-color: purple;
+}
+
+.platinum {
+  background-color: #CCBBAA;
+}
+
+.star {
+  background-color: #DDDDDD;
+}
+
+.innertitle {
+  font-weight: bolder;
+  font-family: 'Ubuntu', sans-serif;
+
+}
+
+.secondline {
+  font-weight: lighter;
+  font-size: .8em;
+}
+
+.centered {
+  text-align: center;
+}
+
+.even {
+  background-color: #ECECEC;
+}
+
+.darkeven {
+  background-color: gray;
+}
+
+.footer {
+  text-align: center;
+  padding-top: 20px;
+}
+
+.backbutton {
+  color: blue;
+  border: solid 2px blue;
+  width: 120px;
+  font-size: 1.25em;
+  border-radius: 20px;
+}
+
+.odd:hover {
+  background-color: blue;
+}
+
+.even:hover {
+  background-color: red;
 }
