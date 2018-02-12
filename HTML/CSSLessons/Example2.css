@@ -1,0 +1,37 @@
+p {
+  font-weight: bold;
+  font-size: 2em;
+  color: gray;
+  width: 50%;
+  margin-top: 0px;
+  margin-right: auto;
+  margin-bottom: 20px;
+  margin-left: auto;
+  padding: 25px 15px;
+  text-align: center;
+  text-decoration: line-through;
+  text-transform: uppercase;
+  min-width: 500px;
+
+}
+
+a {
+  color: #cd45d;
+}
+
+a:hover {
+  font-size: 1.1em
+}
+
+p a {
+  color: yellow;
+}
+
+.small {
+  width: 250px;
+}
+
+.thickborder {
+  border: solid 10px red;
+  border-radius: 100px
+}
