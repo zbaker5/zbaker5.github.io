@@ -3,7 +3,7 @@
 
 <head>
 	<title>Dynamic Text Box Example</title>
-  <link rel"stylesheet" type="text/css" href="dynamic.css">
+  <link rel="stylesheet" type="text/css" href="dynamic.css">
   <script src="dynamic.js"></script>
 </head>
 
@@ -15,11 +15,18 @@
   <div id="textBoxes">
   </div>
 
-  <button onclick="add()">Add them up!</button>
 
-  <div>
-    The answer is: <span id="answer">...</span>
-  </div>
+	<div class="answerText">
+		<label>The answer is: <span id="answer">...</span></label>
+	</div>
+
+	<select>
+		<option value="add">Calculate Sum</option>
+		<option value="average">Calculate Average</option>
+		<option value="median">Calculate Median</option>
+	</select>
+
+  <button id="addButton" onclick="add()">Calculate!</button>
 
   </div>
 </body>

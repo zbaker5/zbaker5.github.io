@@ -1,8 +1,58 @@
+body {
+  background-color: #EFEFFF;
+}
+
 .wrapper {
   width: 70%;
   margin: auto;
+  text-align: center;
 }
 
 button {
-  background-color: black;
+  color: #FFFFFF;
+  background-color: #337AB7;
+  border-radius: 20px;
+  border-color: white;
+  font-size: 1.3em;
+  padding: 5px 15px;
+}
+
+.answerText {
+  font-size: 1.25em;
+  margin: 10px auto;
+}
+
+.numeric {
+  width: 100px;
+  margin: 10px 25px;
+  padding: 5px 15px;
+  border-radius: 5px;
+}
+
+.invalid {
+  border: solid 3px red;
+  background-color: #F5F5DC;
+}
+
+#textBoxes {
+  width: 600px;
+  margin: auto;
+}
+
+#answer {
+  font-size: 1.35em;
+  color: red;
+}
+
+select {
+  padding: 5px;
+  border-radius: 20px;
+  background-color: #337AB7;
+  color: #FFFFFF;
+  font-size: 1.1em;
+  margin-right: 25px;
+}
+
+select.hover {
+  poin
 }

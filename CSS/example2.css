@@ -1,0 +1,44 @@
+h1 {
+  width: 60%;
+  padding: 20px;
+  background-color: orange;
+  margin: auto;
+  text-align: center;
+}
+
+.outer {
+  margin: 45px auto;
+  width: 60%;
+}
+
+.row div{
+  display: inline-block;
+}
+
+.row {
+  text-align: center;
+}
+
+.box {
+  width: 175px;
+  height: 175px;
+  border: solid 1px black;
+  border-radius: 20px;
+  margin: 40px;
+}
+
+.red {
+  background-color: red;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.green {
+  background-color: green;
+}
+
+.blue {
+  background-color: blue;
+}
