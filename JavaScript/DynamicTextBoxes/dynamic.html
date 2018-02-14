@@ -7,7 +7,7 @@
   <script src="dynamic.js"></script>
 </head>
 
-<body>
+<body onload="setup()">
   <div class="wrapper">
   <button onclick="createBox()">Create a Text Box</button>
 
@@ -20,13 +20,13 @@
 		<label>The answer is: <span id="answer">...</span></label>
 	</div>
 
-	<select>
-		<option value="add">Calculate Sum</option>
+	<select id="actionChoice" onchange="chooseAction()">
 		<option value="average">Calculate Average</option>
+		<option value="add" selected>Calculate Sum</option>
 		<option value="median">Calculate Median</option>
 	</select>
 
-  <button id="addButton" onclick="add()">Calculate!</button>
+  <button id="addButton">Text</button>
 
   </div>
 </body>
