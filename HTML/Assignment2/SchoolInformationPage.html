@@ -3,116 +3,149 @@
 
 <head>
 	<title>School Information Page</title>
+	<link rel="stylesheet" type="text/css" href="schoolinfo.css">
 </head>
 
 <body>
   <div class="header">
-    <img width="100" src="./images/Logo.png" alt="logo">
-    <h2>School Information Page</h2>
+    <img class="topleftimg" src="./Images/Logo.png" alt="logo">
+    <h1>School Information Page</h1>
     <ul>
       <li><a href="#">Home</a></li>
-      <li><a href="https://www.google.com">Search</a></li>
+      <li><a href="https://www.google.com"> Search</a></li>
+			<li><a href="#">About Me</a></li>
+			<li><a href="#">Other Sites</a></li>
     </ul>
   </div>
-  <div class="banner">
-    <img src="./images/banner.jpeg" alt="Banner">
-  </div>
+
+	<div class="banner">
+    <img class="banimg" src="./Images/banner.png" alt="Banner">
+	</div>
+
+<br>
+
   <div class="cards">
-    <form>
-      <fieldset>
-        <legend>Card 1</legend>
+			<div class="card1">
+				<div class="cardinner">
           <select>
-            <option selected>School 1</option>
-            <option>School 2</option>
-            <option>School 3</option>
-            <option>School 4</option>
+            <option selected>Texas A&M</option>
+            <option>UT</option>
+            <option>Texas State</option>
+            <option>Texas Tech</option>
           </select>
           <br><br>
-        <img src="SchoolPicture" alt="SchoolPicture">
-        <br><br>
+        <img src="./Images/A&M.png" alt="SchoolPicture">
         <table border="1">
-          <thead>Information</thead>
           <tr>
-            <th colspan="3">Test</th>
+            <th colspan="3">School Tuition</th>
+          </tr>
+					<tr>
+						<td>Year</td>
+						<td>Tuition Min</td>
+						<td>Tuition Max</td>
+					</tr>
+          <tr>
+            <td>2015</td>
+            <td>$22,000</td>
+            <td>$28,000</td>
           </tr>
           <tr>
-            <td>First</td>
-            <td>Second</td>
-            <td>Third</td>
+            <td>2016</td>
+            <td>$23,250</td>
+            <td>$29,500</td>
           </tr>
-          <tr>
-            <td>First</td>
-            <td>Second</td>
-            <td>Third</td>
-          </tr>
+					<tr>
+						<td>2017</td>
+						<td>$24,000</td>
+						<td>$30,000</td>
+					</tr>
         </table>
-        <br>
-        <label>Information List</label>
-        <ul>
-          <li>Item 1</li>
-          <li>Item 2</li>
-          <li>Item 3</li>
-          <li>Item 4</li>
-          <li>Item 5</li>
-        </ul>
+        <br><br>
+        <label>Common Majors</label>
+        <ol>
+          <li>Business</li>
+          <li>Management</li>
+          <li>Marketing</li>
+          <li>Engineering</li>
+          <li>Agriculture</li>
+        </ol>
+			</div>
+			</div>
 
-      </fieldset>
-      <fieldset>
-        <legend>Card 2</legend>
+
+			<div class="card2">
+				<div class="cardinner">
           <select>
-            <option>School 1</option>
-            <option selected>School 2</option>
-            <option>School 3</option>
-            <option>School 4</option>
+            <option>Texas A&M</option>
+            <option selected>UT</option>
+            <option>Texas State</option>
+            <option>Texas Tech</option>
           </select>
           <br><br>
-        <img src="SchoolPicture2" alt="SchoolPicture2">
-        <br><br>
-        <table border="1">
-          <thead>Information</thead>
-          <tr>
-            <th colspan="3">Test</th>
-          </tr>
-          <tr>
-            <td>First</td>
-            <td>Second</td>
-            <td>Third</td>
-          </tr>
-          <tr>
-            <td>First</td>
-            <td>Second</td>
-            <td>Third</td>
-          </tr>
-        </table>
+        <img src="./Images/UT.png" alt="SchoolPicture2">
         <br>
-        <label>Information List</label>
-        <ul>
-          <li>Item 1</li>
-          <li>Item 2</li>
-          <li>Item 3</li>
-          <li>Item 4</li>
-          <li>Item 5</li>
-        </ul>
-
-
-      </fieldset>
-    </form>
+        <table border="1">
+          <tr>
+            <th colspan="3">Tuition</th>
+          </tr>
+          <tr>
+            <td>Year</td>
+            <td>Tuition Min</td>
+            <td>Tuition Max</td>
+          </tr>
+          <tr>
+            <td>2015</td>
+            <td>$23,000</td>
+            <td>$29,000</td>
+          </tr>
+					<tr>
+						<td>2016</td>
+						<td>$25,500</td>
+						<td>$32,000</td>
+					</tr>
+					<tr>
+						<td>2017</td>
+						<td>$26,000</td>
+						<td>$32,000</td>
+					</tr>
+        </table>
+        <br><br>
+        <label>Common Majors</label>
+        <ol>
+          <li>Engineering</li>
+          <li>Biological Sciences</li>
+          <li>Business</li>
+          <li>Management</li>
+          <li>Marketing</li>
+        </ol>
+			</div>
+			</div>
   </div>
-  <div class="media">
-    <form>
-      <fieldset>
-        <legend>Social Media</legend>
-          <a href=""><img width="150" src="./images/Facebook.png"></a>
-          <a href=""><img width="150" src="./images/Twitter.png"></a>
-          <a href=""><img src="extra"></a>
-      </fieldset>
-    </form>
-  </div>
+
+	<div class="feedback">
+			<label>Leave us feedback here</label>
+			<br><br>
+				Name: <input placeholder="First Last" type="text"><br>
+				Email: <input placeholder="example@mail.com" type="text"><br><br>
+				Comment: <br>
+				<textarea></textarea>
+				<br><br>
+				<input type="submit"></input>
+	</div>
+
+	<div class="media">
+			<label>Social Media Links</label>
+			<br><br><br>
+          <a href="https://www.facebook.com"><img width="100" src="./Images/Facebook.png"></a>
+          <a href="https://www.twitter.com"><img width="100" src="./Images/Twitter.png"></a>
+          <a href="https://www.instagram.com"><img width="100" src="./Images/Instagram.png"></a>
+					<a href="https://www.snapchat.com"><img width="100" src="./Images/snapchat.png"></a>
+	</div>
+
   <div class="footer">
-    <a href="#">Link 1</a>
-    <a href="#">Link 2</a>
-    <a href="#">Link 3</a>
-    <a href="#">Link 4</a>
+    <a href="#">Refresh</a>
+    <a href="https://www.google.com">Google</a>
+    <a href="#">More Information</a>
   </div>
 
 </body>
