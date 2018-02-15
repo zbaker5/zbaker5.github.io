@@ -1,9 +1,13 @@
 function createBox() {
   textBox = document.createElement("input");
-  textBox.setAttribute("value", "1");
-  textBox.setAttribute("onkeyup", "validateTextbox(this)")
+  textBox.setAttribute("value", getRand(1000));
+  textBox.setAttribute("onkeyup", "validateTextbox(this)");
   textBox.className = "numeric";
   document.getElementById("textBoxes").appendChild(textBox);
+}
+
+function getRand(max) {
+  return Math.floor(Math.random() * Math.floor(max));
 }
 
 function add() {
@@ -24,6 +28,19 @@ function average() {
   avg = sum/boxes.length;
   });
   document.getElementById("answer").innerHTML = avg;
+}
+
+function median() {
+  boxes = Array.from(document.getElementsByClassName("numeric"));
+  anArray = [];
+  boxes.forEach(function(elem) {
+  anArray.push(parseInt(elem.value));
+  });
+  anArray.sort(function(a, b) {
+    return a-b;
+  });
+  med = anArray[Math.floor(anArray.length / 2)];
+  document.getElementById("answer").innerHTML = med;
 }
 
 function validateTextbox(textBox) {
