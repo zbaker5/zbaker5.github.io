@@ -33,6 +33,7 @@ function chooseAction() {
 
 function nameAddress(student) {
     document.getElementById('name').innerHTML = student.lastName + ', ' + student.firstName;
+    document.getElementById('address').innerHTML = student.streetAddress;
 }
 
 function makeCourseRows(student) {
