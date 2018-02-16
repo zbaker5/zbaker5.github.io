@@ -1,11 +1,38 @@
 function setup() {
-  makeCourseRows(students[0])
+  makeCourseRows(students[0]);
+  nameAddress(students[0]);
 }
 
-function average() {
+function average(course) {
   sum = course.termGrades[0] + course.termGrades[1] + course.termGrades[2] + course.termGrades[3];
-  avg = sum / course.termGrades.length;
+  avg = sum / 4;
   return avg;
+}
+
+function chooseAction() {
+  choice = document.getElementById('actionChoice');
+  action = choice[choice.selectedIndex];
+  document.getElementById('courseRows').innerHTML = '';
+
+  if (action.value == 'Marian Smith') {
+    makeCourseRows(students[0])
+  }
+  if (action.value == 'Waylon Dalton') {
+    makeCourseRows(students[1])
+  }
+  if (action.value == 'Justine Henderson') {
+    makeCourseRows(students[2])
+  }
+  if (action.value == 'Mathias Cobb') {
+    makeCourseRows(students[3])
+  }
+  if (action.value == 'Angela Walker') {
+    makeCourseRows(students[4])
+  }
+}
+
+function nameAddress(student) {
+    document.getElementById('name').innerHTML = student.lastName + ', ' + student.firstName;
 }
 
 function makeCourseRows(student) {
@@ -24,7 +51,7 @@ function makeCourseRows(student) {
 
     row.appendChild(createTD(course.termGrades[3]));
 
-    row.appendChild(createTD(average));
+    row.appendChild(createTD(average(course)));
 
     document.getElementById('courseRows').appendChild(row);
   });
