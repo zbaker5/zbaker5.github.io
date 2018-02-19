@@ -15,25 +15,33 @@ function chooseAction() {
   document.getElementById('courseRows').innerHTML = '';
 
   if (action.value == 'Marian Smith') {
-    makeCourseRows(students[0])
+    makeCourseRows(students[0]);
+    nameAddress(students[0]);
   }
   if (action.value == 'Waylon Dalton') {
-    makeCourseRows(students[1])
+    makeCourseRows(students[1]);
+    nameAddress(students[1]);
   }
   if (action.value == 'Justine Henderson') {
-    makeCourseRows(students[2])
+    makeCourseRows(students[2]);
+    nameAddress(students[2]);
   }
   if (action.value == 'Mathias Cobb') {
-    makeCourseRows(students[3])
+    makeCourseRows(students[3]);
+    nameAddress(students[3]);
   }
   if (action.value == 'Angela Walker') {
-    makeCourseRows(students[4])
+    makeCourseRows(students[4]);
+    nameAddress(students[4]);
   }
 }
 
 function nameAddress(student) {
     document.getElementById('name').innerHTML = student.lastName + ', ' + student.firstName;
     document.getElementById('address').innerHTML = student.streetAddress;
+    document.getElementById('citystatezip').innerHTML = student.city + ', ' + student.state + ' ' + student.zipCode;
+    document.getElementById('picture').src = student.avatar;
+    document.getElementById('idNumber').innerHTML = student.idNumber;
 }
 
 function makeCourseRows(student) {

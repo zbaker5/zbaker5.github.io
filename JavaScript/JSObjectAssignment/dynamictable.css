@@ -1,27 +1,62 @@
 body {
   margin: auto;
+  background-color: #A6A6BA;
+}
+
+.studentInfo {
+  margin: 25px auto;
+  width: 80%;
+}
+
+#picture {
+  float: right;
+  width: 135px;
 }
 
 table {
-  margin: auto;
+  width: 80%;
+  margin: 50px auto;
+  border-collapse:collapse;
+  border-spacing:0;
 }
 
 .selwrap {
   text-align: center;
+  margin: 25px auto;
 }
 
 select {
-  margin: 20px 45%;
-  font-size: 1.2em;
+  margin: 20px 44 %;
+  padding: 15px;
+  font-size: 1.5em;
+  border-radius: 25px;
+  border-color: black;
+}
+
+tr .top {
+  background-color: grey;
 }
 
 th {
   padding: 15px;
-  font-size: 1.1em;
+  font-size: 1.25em;
   background-color: grey;
-  border-color: grey;
+  border-bottom: 2px solid grey;
 }
 
 td {
-  padding: 15px;
+  padding: 15px 38px;
+  border-bottom: 2px solid grey;
+}
+
+#idNumber {
+  margin: 10px 0px 10px 20px;
+}
+
+.reportCard {
+  border: solid 3px black;
+  width: 50%;
+  margin: auto;
+  border-radius: 25px;
+  background-color: #FFFFFF;
 }
