@@ -1,0 +1,55 @@
+.wrapper {
+  margin: auto;
+}
+
+div {
+  border: 3px solid black;
+}
+
+.title {
+  border: 3px solid black;
+  font-size: 2.25em;
+  text-align: center;
+}
+
+.avatar {
+  border: 3px solid black;
+  float: left;
+  margin: 15px;
+}
+
+.newGame {
+  border: 3px solid black;
+  width: 25%;
+  font-size: 1.5em;
+  text-align: center;
+  padding: 25px;
+  margin: 25px auto;
+  border-radius: 15px;
+}
+
+.dice {
+  border: 3px solid black;
+  margin: 25px auto;
+  width: 50%;
+  text-align: center;
+}
+
+.dice img {
+  margin: auto 30px;
+  width: 100px;
+  padding: 10px;
+  border-radius: 25px;
+}
+
+.dice button {
+  font-size: 1.5em;
+  padding: 10px;
+  margin: 25px 10px 25px 80%;
+  border-radius: 25px;
+}
+
+.scoreCard {
+  border: 3px solid black;
+  margin: 15px;
+}
