@@ -18,13 +18,12 @@ div {
   margin: 15px;
 }
 
-.newGame {
-  border: 3px solid black;
+.newGame button {
   width: 25%;
   font-size: 1.5em;
   text-align: center;
   padding: 25px;
-  margin: 25px auto;
+  margin: 25px 35%;
   border-radius: 15px;
 }
 
@@ -36,10 +35,13 @@ div {
 }
 
 .dice img {
-  margin: auto 30px;
+  margin: 15px 35px;
   width: 100px;
-  padding: 10px;
-  border-radius: 25px;
+  border-radius: 15px;
+}
+
+.saved {
+  border: 5px solid green;
 }
 
 .dice button {
@@ -47,9 +49,30 @@ div {
   padding: 10px;
   margin: 25px 10px 25px 80%;
   border-radius: 25px;
+  background-color: #258AC4;
+  color: white;
 }
 
 .scoreCard {
   border: 3px solid black;
   margin: 15px;
+}
+
+table, tr, td, th {
+  border: solid 2px white;
+  margin: 25px auto;
+  font-size: 1.25em;
+  background-color: #258AC4;
+  color: white;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+#picture {
+  width: 150px;
+}
+
+#playerName {
+  margin: auto 40%;
+  text-align: center;
 }

@@ -3,30 +3,30 @@ yahtzee = {
    'throwsRemainingInTurn' : 3,
    'player' : {
      'name' : 'Zach',
-     'avatar': 'https://www.google.com'
-   }
+     'avatar': 'https://lorempixel.com/200/200/people/1/'
+   },
   'dice' : [
     {
-      'sideUp' : 1,
+      'sideUp' : 6,
       'saved' : true,
-    }
+    },
+    {
+      'sideUp' : 1,
+      'saved' : false,
+    },
+    {
+      'sideUp' : 6,
+      'saved' : true,
+    },
     {
       'sideUp' : 2,
       'saved' : false,
-    }
+    },
     {
-      'sideUp' : 3,
-      'saved' : true,
-    }
-    {
-      'sideUp' : 4,
-      'saved' : false,
-    }
-    {
-      'sideUp' : 5,
+      'sideUp' : 1,
       'saved' : false
     }
-  ]
+  ],
   'scoreCard' : [
     {
       'title' : 'Ones',
@@ -36,7 +36,7 @@ yahtzee = {
       'score' : 0,
       'scoreCondition' : 'notSureYet',
       'scoreMath' : 'sumOfOnes',
-    }
+    },
     {
       'title' : 'Twos',
       'top' : true,
@@ -45,7 +45,7 @@ yahtzee = {
       'score' : 0,
       'scoreCondition' : 'notSureYet',
       'scoreMath' : 'sumOfTwos',
-    }
+    },
     {
       'title' : 'Threes',
       'top' : true,
@@ -54,7 +54,7 @@ yahtzee = {
       'score' : 0,
       'scoreCondition' : 'notSureYet',
       'scoreMath' : 'sumOfThrees',
-    }
+    },
     {
       'title' : 'Fours',
       'top' : true,
@@ -63,7 +63,7 @@ yahtzee = {
       'score' : 0,
       'scoreCondition' : 'notSureYet',
       'scoreMath' : 'sumOfFours',
-    }
+    },
     {
       'title' : 'Fives',
       'top' : true,
@@ -72,7 +72,7 @@ yahtzee = {
       'score' : 0,
       'scoreCondition' : 'notSureYet',
       'scoreMath' : 'sumOfFives',
-    }
+    },
     {
       'title' : 'Sixes',
       'top' : true,
@@ -81,7 +81,7 @@ yahtzee = {
       'score' : 0,
       'scoreCondition' : 'notSureYet',
       'scoreMath' : 'sumOfOnes',
-    }
+    },
     {
       'title' : 'Full House',
       'top' : false,
@@ -93,5 +93,4 @@ yahtzee = {
     }
 
   ]
-  }
 }

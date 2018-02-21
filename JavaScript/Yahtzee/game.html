@@ -5,44 +5,60 @@
 	<title>Yahtzee</title>
   <link rel="stylesheet" type="text/css" href="game.css">
   <script src="yahtzeeObject1.js"></script>
+	<script src="yahtzee.js"></script>
+
 </head>
 
-<body>
+<body onload="setup()">
   <div class="wrapper">
     <div class="title"><label>Yahtzee</label>
     </div>
-    <div class="avatar">
-      <img src="https://lorempixel.com/200/200/people/6/"><br>
-      <label>Zach Baker</label>
+		<div class="avatar">
+      <img id="picture" src="./images/defaultAvatar.png"><br>
+      <label id="playerName">Name</label>
     </div>
-    <div class="newGame"><label>New Game</label>
+    <div class="newGame"><button>New Game</button>
     </div>
     <div class="dice">
-      <img src="./images/die1.png">
-      <img src="./images/die2.png">
-      <img src="./images/die3.png">
-      <img src="./images/die4.png">
-      <img src="./images/die5.png"><br>
+      <img id="die0" class="saved" src="./images/die6.png">
+      <img id="die1" src="./images/die2.png">
+      <img id="die2" src="./images/die3.png">
+      <img id="die3" class="saved" src="./images/die4.png">
+      <img id="die4" src="./images/die5.png"><br>
       <button>Roll Dice!</button>
     </div>
     <div class="scoreCard">
       <table>
       <tr>
-        <th>Ones</th>
-        <th>Twos</th>
-        <th>Threes</th>
-        <th>Fours</th>
-        <th>Fives</th>
-        <th>Sixes</th>
-        <th>Full House</th>
+        <th></th>
+        <th>Score</th>
+      </tr>
+			<tr>
+        <td>Ones</td>
+        <td>0</td>
       </tr>
       <tr>
+        <td>Twos</td>
         <td>0</td>
+      </tr>
+			<tr>
+        <td>Threes</td>
         <td>0</td>
+      </tr>
+			<tr>
+        <td>Fours</td>
         <td>0</td>
+      </tr>
+			<tr>
+        <td>Fives</td>
         <td>0</td>
+      </tr>
+			<tr>
+        <td>Sixes</td>
         <td>0</td>
-        <td>0</td>
+      </tr>
+			<tr>
+        <td>Full House</td>
         <td>0</td>
       </tr>
       </table>
