@@ -1,7 +1,7 @@
 function setup() {
   loadPlayerInfo();
   loadDice();
-  loadScoreCard();
+  loadScorecard();
 }
 
 function loadPlayerInfo() {
@@ -20,20 +20,49 @@ function loadDice() {
     } else {
       img.className = '';
     }
+    
+    score = 0;
+    if(die.sideUp == 1) {
+      score += 1;
+    }
   });
+
 }
 
-function loadScoreCard() {
-  yahtzee.scoreCard.forEach(function(index) {
-    row = document.createElement('tr');
-
-      row.appendChild(createTD(yahtzee.scoreCard.title));
-
+function loadScorecard() {
+  topSubtotal = 0;
+  yahtzee.scoreCard.forEach(function(scoreCardRow) {
+    if (scoreCardRow.top) {
+      buildScoreCardRow(scoreCardRow.title, scoreCardRow.score);
+      topSubtotal += scoreCardRow.score ;
+    }
   });
+  buildScoreCardRow('Top Subtotal:', topSubtotal);
+
+  if(topSubtotal >= 65) {
+    bonus = 30;
+  } else {
+    bonus = 0;
+  }
+  buildScoreCardRow('Top Bonus:', bonus);
+
+  bottomSubtotal = 0;
+  yahtzee.scoreCard.forEach(function(scoreCardRow) {
+    if (!scoreCardRow.top) {
+      buildScoreCardRow(scoreCardRow.title, scoreCardRow.score);
+      bottomSubtotal += scoreCardRow.score;
+    }
+  });
+  buildScoreCardRow('Total Score: ', topSubtotal + bonus + bottomSubtotal);
 }
 
-function createTD(content) {
-  cell = document.createElement('td');
-  cell.innerHTML = content;
-  return cell;
+function buildScoreCardRow(title, score) {
+  tr = document.createElement('tr');
+  td1 = document.createElement('td');
+  td1.innerHTML = title;
+  tr.appendChild(td1);
+  td2 = document.createElement('td');
+  td2.innerHTML = score;
+  tr.appendChild(td2);
+  document.getElementById('scoreRows').appendChild(tr);
 }

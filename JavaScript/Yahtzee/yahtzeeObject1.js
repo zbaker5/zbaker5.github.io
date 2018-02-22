@@ -83,6 +83,24 @@ yahtzee = {
       'scoreMath' : 'sumOfOnes',
     },
     {
+      'title' : 'Three of a Kind',
+      'top' : false,
+      'displaySequence' : 9,
+      'scoreRecorded' : true,
+      'score' : 30,
+      'scoreCondition' : 'notSureYet',
+      'scoreMath' : 'fixedScoreOf25',
+    },
+    {
+      'title' : 'Four of a Kind',
+      'top' : false,
+      'displaySequence' : 9,
+      'scoreRecorded' : true,
+      'score' : 40,
+      'scoreCondition' : 'notSureYet',
+      'scoreMath' : 'fixedScoreOf25',
+    },
+    {
       'title' : 'Full House',
       'top' : false,
       'displaySequence' : 9,
@@ -90,7 +108,7 @@ yahtzee = {
       'score' : 25,
       'scoreCondition' : 'notSureYet',
       'scoreMath' : 'fixedScoreOf25',
-    }
+    },
 
   ]
 }
