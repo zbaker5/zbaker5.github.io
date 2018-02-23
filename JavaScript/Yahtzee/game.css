@@ -49,6 +49,10 @@
   color: white;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 .scoreCard {
   margin: 15px;
 }
@@ -66,6 +70,20 @@ table, tr, td, th {
 #die0:hover {
   cursor: crosshair;
 }
+#die1:hover {
+  cursor: crosshair;
+}
+#die2:hover {
+  cursor: crosshair;
+}
+#die3:hover {
+  cursor: crosshair;
+}
+#die4:hover {
+  cursor: crosshair;
+}
+
+
 
 
 #picture {

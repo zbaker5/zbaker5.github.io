@@ -3,7 +3,6 @@ function setup() {
   loadDice();
   loadScorecard();
   rollDice();
-  save();
 }
 
 function loadPlayerInfo() {
@@ -12,16 +11,23 @@ function loadPlayerInfo() {
 }
 
 function rollDice() {
-  return yahtzee.dice[index = 0].sideUp = (Math.floor(Math.random() * 6) + 1);
+  yahtzee.dice.forEach(function(roll, index) {
+  return roll.sideUp[index] = (Math.floor(Math.random() * 6) + 1);
+});
 }
 
 function save() {
-  yahtzee.dice[index].saved = 'true';
+  if(event.target.className != 'saved') {
+  event.target.className = 'saved';
+} else {
+  event.target.className = '';
+}
 }
 
 function loadDice() {
   dieImages = ['./images/defaultAvatar', './images/die1.png', './images/die2.png',
    './images/die3.png', './images/die4.png', './images/die5.png', './images/die6.png']
+   rollDice();
   yahtzee.dice.forEach(function(die, index) {
     img = document.getElementById('die' + index);
     img.src = dieImages[die.sideUp];
