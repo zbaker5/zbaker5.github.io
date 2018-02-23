@@ -7,24 +7,24 @@ yahtzee = {
    },
   'dice' : [
     {
-      'sideUp' : 6,
+      'sideUp' : 1,
+      'saved' : true,
+    },
+    {
+      'sideUp' : 4,
       'saved' : true,
     },
     {
       'sideUp' : 1,
-      'saved' : false,
+      'saved' : true,
     },
     {
       'sideUp' : 6,
       'saved' : true,
     },
     {
-      'sideUp' : 2,
-      'saved' : false,
-    },
-    {
-      'sideUp' : 1,
-      'saved' : false
+      'sideUp' : 6,
+      'saved' : true,
     }
   ],
   'scoreCard' : [

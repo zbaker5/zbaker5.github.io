@@ -9,24 +9,39 @@ function loadPlayerInfo() {
   document.getElementById("picture").src = yahtzee.player.avatar;
 }
 
+
+
+
+
 function loadDice() {
   dieImages = ['./images/defaultAvatar', './images/die1.png', './images/die2.png',
    './images/die3.png', './images/die4.png', './images/die5.png', './images/die6.png']
   yahtzee.dice.forEach(function(die, index) {
     img = document.getElementById('die' + index);
     img.src = dieImages[die.sideUp];
+    if(die.sideUp == 1 && die.saved == true) {
+      yahtzee.scoreCard[index = 0].score ++;
+    } else if(die.sideUp == 2 && die.saved == true) {
+      yahtzee.scoreCard[index = 1].score +=2;
+    } else if(die.sideUp == 3 && die.saved == true) {
+      yahtzee.scoreCard[index = 2].score +=3;
+    } else if(die.sideUp == 4 && die.saved == true) {
+      yahtzee.scoreCard[index = 3].score +=4;
+    } else if(die.sideUp == 5 && die.saved == true) {
+      yahtzee.scoreCard[index = 4].score +=5;
+    } else if(die.sideUp == 6 && die.saved == true) {
+      yahtzee.scoreCard[index = 5].score +=6;
+    }
+
+
     if(die.saved) {
       img.className = 'saved';
     } else {
       img.className = '';
     }
-    
-    score = 0;
-    if(die.sideUp == 1) {
-      score += 1;
-    }
-  });
 
+
+});
 }
 
 function loadScorecard() {
