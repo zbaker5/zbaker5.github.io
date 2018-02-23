@@ -2,6 +2,8 @@ function setup() {
   loadPlayerInfo();
   loadDice();
   loadScorecard();
+  rollDice();
+  save();
 }
 
 function loadPlayerInfo() {
@@ -14,7 +16,7 @@ function rollDice() {
 }
 
 function save() {
-  document.class = 'saved';
+  yahtzee.dice[index].saved = 'true';
 }
 
 function loadDice() {

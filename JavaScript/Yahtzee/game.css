@@ -63,7 +63,7 @@ table, tr, td, th {
   text-align: center;
 }
 
-.hover:hover {
+#die0:hover {
   cursor: crosshair;
 }
 
