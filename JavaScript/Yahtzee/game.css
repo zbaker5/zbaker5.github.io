@@ -2,10 +2,6 @@
   margin: auto;
 }
 
-div {
-  border: 3px solid black;
-}
-
 .title {
   border: 3px solid black;
   font-size: 2.25em;
@@ -54,7 +50,6 @@ div {
 }
 
 .scoreCard {
-  border: 3px solid black;
   margin: 15px;
 }
 
@@ -67,6 +62,11 @@ table, tr, td, th {
   border-collapse: collapse;
   text-align: center;
 }
+
+.hover:hover {
+  cursor: crosshair;
+}
+
 
 #picture {
   width: 150px;

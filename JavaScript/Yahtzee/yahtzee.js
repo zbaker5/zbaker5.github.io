@@ -9,9 +9,13 @@ function loadPlayerInfo() {
   document.getElementById("picture").src = yahtzee.player.avatar;
 }
 
+function rollDice() {
+  return yahtzee.dice[index = 0].sideUp = (Math.floor(Math.random() * 6) + 1);
+}
 
-
-
+function save() {
+  document.class = 'saved';
+}
 
 function loadDice() {
   dieImages = ['./images/defaultAvatar', './images/die1.png', './images/die2.png',
@@ -19,6 +23,7 @@ function loadDice() {
   yahtzee.dice.forEach(function(die, index) {
     img = document.getElementById('die' + index);
     img.src = dieImages[die.sideUp];
+//Score Based off Dice side
     if(die.sideUp == 1 && die.saved == true) {
       yahtzee.scoreCard[index = 0].score ++;
     } else if(die.sideUp == 2 && die.saved == true) {

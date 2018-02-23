@@ -20,12 +20,12 @@
     <div class="newGame"><button>New Game</button>
     </div>
     <div class="dice">
-      <img id="die0" class="saved" src="./images/die6.png">
-      <img id="die1" src="./images/die2.png">
-      <img id="die2" src="./images/die3.png">
-      <img id="die3" class="saved" src="./images/die4.png">
-      <img id="die4" src="./images/die5.png"><br>
-      <button>Roll Dice!</button>
+      <img id="die0" onclick="save()" class="hover saved" src="./images/die6.png">
+      <img id="die1" onclick="save()" class="hover" src="./images/die2.png">
+      <img id="die2" onclick="save()" class="hover" src="./images/die3.png">
+      <img id="die3" onclick="save()" class="hover saved" src="./images/die4.png">
+      <img id="die4" onclick="save()" class="hover" src="./images/die5.png"><br>
+      <button onclick="rollDice()">Roll Dice!</button>
     </div>
     <div class="scoreCard">
       <table>
