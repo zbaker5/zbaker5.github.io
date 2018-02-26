@@ -2,7 +2,6 @@ function setup() {
   loadPlayerInfo();
   loadDice();
   loadScorecard();
-  rollDice();
 }
 
 function loadPlayerInfo() {
@@ -11,14 +10,15 @@ function loadPlayerInfo() {
 }
 
 function rollDice() {
-  yahtzee.dice.forEach(function(roll, index) {
-  return roll.sideUp[index] = (Math.floor(Math.random() * 6) + 1);
-});
+  for (i=0; i < yahtzee.dice.length; i++) {
+  yahtzee.dice[i].sideUp = (Math.floor(Math.random() * 6) + 1);
+  }
 }
 
 function save() {
   if(event.target.className != 'saved') {
   event.target.className = 'saved';
+  yahtzee.dice.saved = true;
 } else {
   event.target.className = '';
 }
@@ -27,7 +27,6 @@ function save() {
 function loadDice() {
   dieImages = ['./images/defaultAvatar', './images/die1.png', './images/die2.png',
    './images/die3.png', './images/die4.png', './images/die5.png', './images/die6.png']
-   rollDice();
   yahtzee.dice.forEach(function(die, index) {
     img = document.getElementById('die' + index);
     img.src = dieImages[die.sideUp];
@@ -91,6 +90,13 @@ function buildScoreCardRow(title, score) {
   tr.appendChild(td1);
   td2 = document.createElement('td');
   td2.innerHTML = score;
+  td2.className = 'dark';
+  td2.onclick = 'yellowBackground()';
+  if(td2)
   tr.appendChild(td2);
   document.getElementById('scoreRows').appendChild(tr);
+}
+
+function yellowBackground() {
+  event.target.className = 'yellowBackground';
 }

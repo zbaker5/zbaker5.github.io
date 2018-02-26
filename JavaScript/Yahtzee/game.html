@@ -13,12 +13,23 @@
   <div class="wrapper">
     <div class="title"><label>Yahtzee</label>
     </div>
+		<div class="newGame"><button>New Game</button>
+		</div>
 		<div class="avatar">
       <img id="picture" src="./images/defaultAvatar.png"><br>
       <label id="playerName">Name</label>
     </div>
-    <div class="newGame"><button>New Game</button>
-    </div>
+		<div class="scoreCard">
+			<table>
+			<tr>
+				<th></th>
+				<th>Score</th>
+			</tr>
+			<tbody id="scoreRows">
+
+			</tbody>
+			</table>
+		</div>
     <div class="dice">
       <img id="die0" onclick="save()" class="" src="./images/die6.png">
       <img id="die1" onclick="save()" class="" src="./images/die2.png">
@@ -27,18 +38,9 @@
       <img id="die4" onclick="save()" class="" src="./images/die5.png"><br>
       <button onclick="rollDice()">Roll Dice!</button>
     </div>
-    <div class="scoreCard">
-      <table>
-      <tr>
-        <th></th>
-        <th>Score</th>
-      </tr>
-			<tbody id="scoreRows">
 
-			</tbody>
-    	</table>
-    </div>
   </div>
+
 </body>
 
 </html>
