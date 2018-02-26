@@ -31,12 +31,15 @@
 			</table>
 		</div>
     <div class="dice">
-      <img id="die0" onclick="save()" class="" src="./images/die6.png">
-      <img id="die1" onclick="save()" class="" src="./images/die2.png">
-      <img id="die2" onclick="save()" class="" src="./images/die3.png">
-      <img id="die3" onclick="save()" class="" src="./images/die4.png">
-      <img id="die4" onclick="save()" class="" src="./images/die5.png"><br>
-      <button onclick="rollDice()">Roll Dice!</button>
+      <img id="die0" onclick="saveDie(0)">
+      <img id="die1" onclick="saveDie(1)">
+      <img id="die2" onclick="saveDie(2)">
+      <img id="die3" onclick="saveDie(3)">
+      <img id="die4" onclick="saveDie(4)"><br>
+      <button id="roll" onclick="rollDice()">Roll Dice!</button>
+			<div class="throwsRemaining">
+			<label id="remain">Rolls Remaining: </label><label id="rollsRemain">3</label>
+			</div>
     </div>
 
   </div>

@@ -112,6 +112,11 @@ table, tr, td, th {
   cursor: pointer;
 }
 
+.throwsRemaining {
+  float: right;
+  font-size: 1.5em;
+}
+
 .yellowBackground {
   background-color: yellow;
 }
