@@ -80,6 +80,11 @@ table, tr, td, th {
   text-align: center;
 }
 
+.dark {
+  background-color: yellow;
+  color: black;
+}
+
 #die0:hover {
   cursor: crosshair;
 }
@@ -117,6 +122,24 @@ table, tr, td, th {
   font-size: 1.5em;
 }
 
-.yellowBackground {
+.saveScore {
   background-color: yellow;
+}
+
+.scored {
+  background-color: yellow;
+  color: black;
+}
+
+.scored:hover {
+  cursor: pointer;
+}
+
+.totals {
+  background-color: #156Aa4;
+}
+
+.saveScore {
+  border: 3px solid green;
+  color: black;
 }

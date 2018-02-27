@@ -2,6 +2,7 @@ function setup() {
   loadPlayerInfo();
   loadDice();
   loadScorecard();
+  document.getElementById('rollsRemain').innerHTML = yahtzee.throwsRemainingInTurn;
 }
 
 function loadPlayerInfo() {
@@ -36,52 +37,71 @@ function loadDice() {
     } else {
       img.className = '';
     }
-
 });
 }
 
+
 function loadScorecard() {
   topSubtotal = 0;
-  yahtzee.scoreCard.forEach(function(scoreCardRow) {
+  yahtzee.scoreCard.forEach(function(scoreCardRow, index) {
     if (scoreCardRow.top) {
-      buildScoreCardRow(scoreCardRow.title, scoreCardRow.score);
+      buildScoreCardRow(scoreCardRow.title, scoreCardRow.score, (scoreCardRow.scoreRecorded ? 'scored' : 'unscored'), scoreCardRow.scoreRecorded), index;
       topSubtotal += scoreCardRow.score ;
     }
   });
-  buildScoreCardRow('Top Subtotal:', topSubtotal);
+  buildScoreCardRow('Top Subtotal:', topSubtotal, 'totals', false, 0);
 
   if(topSubtotal >= 65) {
     bonus = 30;
   } else {
     bonus = 0;
   }
-  buildScoreCardRow('Top Bonus:', bonus);
+  buildScoreCardRow('Top Bonus:', bonus, 'totals', false, 0);
 
   bottomSubtotal = 0;
-  yahtzee.scoreCard.forEach(function(scoreCardRow) {
+  yahtzee.scoreCard.forEach(function(scoreCardRow, index) {
     if (!scoreCardRow.top) {
-      buildScoreCardRow(scoreCardRow.title, scoreCardRow.score);
+      buildScoreCardRow(scoreCardRow.title, scoreCardRow.score, (scoreCardRow.scoreRecorded ? 'scored' : 'unscored'), scoreCardRow.scoreRecorded, index);
       bottomSubtotal += scoreCardRow.score;
     }
   });
-  buildScoreCardRow('Total Score: ', topSubtotal + bonus + bottomSubtotal);
+  buildScoreCardRow('Total Score: ', topSubtotal + bonus + bottomSubtotal, 'totals', false, 0);
 }
 
-function buildScoreCardRow(title, score) {
+
+function buildScoreCardRow(title, score, columnClassName, clickable, scoreCardIndex) {
   tr = document.createElement('tr');
   td1 = document.createElement('td');
   td1.innerHTML = title;
   tr.appendChild(td1);
   td2 = document.createElement('td');
   td2.innerHTML = score;
-  td2.className = 'dark';
-  td2.onclick = 'yellowBackground()';
+  td2.className = columnClassName;
+  if (clickable) {
+    td2.onclick = saveScore;
+    td2.setAttribute('data-scoreCardIndex', scoreCardIndex);
+  }
   if(td2)
   tr.appendChild(td2);
   document.getElementById('scoreRows').appendChild(tr);
 }
 
+
+function saveScore() {
+  index = this.getAttribute('data-scoreCardIndex');
+  alert(index);
+  this.className = 'saveScore';
+}
+
+
 function rollDice() {
+  if (yahtzee.throwsRemainingInTurn > 0) {
+    document.getElementById('rollsRemain').innerHTML = yahtzee.throwsRemainingInTurn -= 1;
+    document.getElementById('roll').disabled = (yahtzee.throwsRemainingInTurn <= 0);
+  }
+
+  
+
   //TODO: Do not allow roll if all dice saved
   yahtzee.dice.forEach(function(die) {
     if (die.saved != true) {
@@ -89,12 +109,8 @@ function rollDice() {
     }
   });
   loadDice();
-  if (yahtzee.throwsRemainingInTurn > 0) {
-    document.getElementById('rollsRemain').innerHTML = yahtzee.throwsRemainingInTurn -= 1;
-  } else {
-    document.getElementById('roll').disabled = (yahtzee.throwsRemainingInTurn <= 0);
-  }
 }
+
 
 function saveDie(dieIndex) {
   if(yahtzee.throwsRemainingInTurn != 3) {
@@ -111,7 +127,3 @@ function saveDie(dieIndex) {
   event.target.className = '';
   }
 } */
-
-function yellowBackground() {
-  event.target.className = 'yellowBackground';
-}
