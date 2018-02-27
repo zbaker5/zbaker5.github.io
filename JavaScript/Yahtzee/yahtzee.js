@@ -100,7 +100,7 @@ function rollDice() {
     document.getElementById('roll').disabled = (yahtzee.throwsRemainingInTurn <= 0);
   }
 
-  
+
 
   //TODO: Do not allow roll if all dice saved
   yahtzee.dice.forEach(function(die) {
