@@ -31,6 +31,11 @@ body {
   border-radius: 15px;
 }
 
+.turns {
+  font-size: 1.5em;
+  padding-left: 115px;
+}
+
 .dice {
   border: 3px solid black;
   margin: 25px 15% 25px 35%;
@@ -122,10 +127,6 @@ table, tr, td, th {
   font-size: 1.5em;
 }
 
-.saveScore {
-  background-color: yellow;
-}
-
 .scored {
   background-color: yellow;
   color: black;
@@ -142,4 +143,5 @@ table, tr, td, th {
 .saveScore {
   border: 3px solid green;
   color: black;
+  background-color: yellow;
 }
