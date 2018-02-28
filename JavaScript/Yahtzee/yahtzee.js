@@ -39,6 +39,7 @@ function loadDice() {
     } else {
       img.className = '';
     }
+    loadScorecard();
 });
 }
 
@@ -103,6 +104,9 @@ function saveScore() {
     if (yahtzee.turnsRemaining > 0) {
       yahtzee.turnsRemaining -= 1;
       document.getElementById('turnsRemain').innerHTML = 'Turns Remaining: ' + yahtzee.turnsRemaining;
+    }
+    if (yahtzee.turnsRemaining == 0) {
+      alert('Your Final Score is: ' + topSubtotal + bonus + bottomSubtotal);
     }
     loadDice();
     // throws reset
