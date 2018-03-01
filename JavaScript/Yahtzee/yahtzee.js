@@ -119,16 +119,16 @@ function rollDice() {
 function calculateScores() {
   yahtzee.scoreCard.forEach(function(scoreCardRow) {
     if (!scoreCardRow.scoreRecorded) {
-      if (conditionIsMet (scoreCardRow.scoreCondition)) {
+      if (conditionIsMet(scoreCardRow.scoreCondition)) {
         if (scoreCardRow.scoreMath[0] == 'const') {
           scoreCardRow.score = scoreCardRow.scoreMath[1];
         }
         if (scoreCardRow.scoreMath[0] == 'sum') {
           scoreCardRow.score = sumOfDice(scoreCardRow.scoreMath[1]);
         }
-      }  else {
-        scoreCardRow.score = 0;
       }
+    } else {
+      scoreCardRow.score = 0;
     }
   });
   loadScorecard();
@@ -151,10 +151,14 @@ function ofAKind(condition) {
   return false;
 }
 
+function inARow(condition) {
+  return false;
+}
+
 function sumOfDice(valueToMatch) {
   total = 0;
   yahtzee.dice.forEach(function(die) {
-    if (die.sideUp == valueToMatch || scoreCardRow.scoreMath[1] === 0) {
+    if (die.sideUp == valueToMatch || valueToMatch === 0) {
       total += die.sideUp;
     }
   });
