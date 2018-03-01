@@ -18,20 +18,6 @@ function loadDice() {
   yahtzee.dice.forEach(function(die, index) {
     img = document.getElementById('die' + index);
     img.src = dieImages[die.sideUp];
-//Score Based off Dice side
-    if(die.sideUp == 1 && die.saved == true) {
-      yahtzee.scoreCard[index = 0].score ++;
-    } else if(die.sideUp == 2 && die.saved == true) {
-      yahtzee.scoreCard[index = 1].score +=2;
-    } else if(die.sideUp == 3 && die.saved == true) {
-      yahtzee.scoreCard[index = 2].score +=3;
-    } else if(die.sideUp == 4 && die.saved == true) {
-      yahtzee.scoreCard[index = 3].score +=4;
-    } else if(die.sideUp == 5 && die.saved == true) {
-      yahtzee.scoreCard[index = 4].score +=5;
-    } else if(die.sideUp == 6 && die.saved == true) {
-      yahtzee.scoreCard[index = 5].score +=6;
-    }
 
 
     if(die.saved) {
@@ -127,6 +113,52 @@ function rollDice() {
     }
   });
   loadDice();
+  calculateScores();
+}
+
+function calculateScores() {
+  yahtzee.scoreCard.forEach(function(scoreCardRow) {
+    if (!scoreCardRow.scoreRecorded) {
+      if (conditionIsMet (scoreCardRow.scoreCondition)) {
+        if (scoreCardRow.scoreMath[0] == 'const') {
+          scoreCardRow.score = scoreCardRow.scoreMath[1];
+        }
+        if (scoreCardRow.scoreMath[0] == 'sum') {
+          scoreCardRow.score = sumOfDice(scoreCardRow.scoreMath[1]);
+        }
+      }  else {
+        scoreCardRow.score = 0;
+      }
+    }
+  });
+  loadScorecard();
+}
+
+function conditionIsMet(condition) {
+  if (condition[0] == 'none') {
+    return true;
+  }
+  if (condition[0] == 'ofAKind') {
+    return ofAKind(condition);
+  }
+  if (condition[0] == 'inARow') {
+    return inARow(condition);
+  }
+  return false;
+}
+
+function ofAKind(condition) {
+  return false;
+}
+
+function sumOfDice(valueToMatch) {
+  total = 0;
+  yahtzee.dice.forEach(function(die) {
+    if (die.sideUp == valueToMatch || scoreCardRow.scoreMath[1] === 0) {
+      total += die.sideUp;
+    }
+  });
+  return total;
 }
 
 
