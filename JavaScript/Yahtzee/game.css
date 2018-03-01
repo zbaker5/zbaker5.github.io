@@ -140,8 +140,17 @@ table, tr, td, th {
   background-color: #156Aa4;
 }
 
-.saveScore {
+.scored {
   border: 3px solid green;
   color: black;
   background-color: yellow;
+}
+
+.unscored {
+  color: black;
+  background-color: yellow;
+}
+
+.unscored:hover {
+  cursor: pointer;
 }

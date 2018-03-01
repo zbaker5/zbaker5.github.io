@@ -35,7 +35,7 @@ function loadScorecard() {
   document.getElementById('scoreRows').innerHTML = '';
   yahtzee.scoreCard.forEach(function(scoreCardRow, index) {
     if (scoreCardRow.top) {
-      buildScoreCardRow(scoreCardRow.title, scoreCardRow.score, (scoreCardRow.scoreRecorded ? 'scored' : 'unscored'), scoreCardRow.scoreRecorded, index);
+      buildScoreCardRow(scoreCardRow.title, scoreCardRow.score, (scoreCardRow.scoreRecorded ? 'scored' : 'unscored'), !scoreCardRow.scoreRecorded, index);
       topSubtotal += scoreCardRow.score ;
     }
   });
@@ -51,7 +51,7 @@ function loadScorecard() {
   bottomSubtotal = 0;
   yahtzee.scoreCard.forEach(function(scoreCardRow, index) {
     if (!scoreCardRow.top) {
-      buildScoreCardRow(scoreCardRow.title, scoreCardRow.score, (scoreCardRow.scoreRecorded ? 'scored' : 'unscored'), scoreCardRow.scoreRecorded, index);
+      buildScoreCardRow(scoreCardRow.title, scoreCardRow.score, (scoreCardRow.scoreRecorded ? 'scored' : 'unscored'), !scoreCardRow.scoreRecorded, index);
       bottomSubtotal += scoreCardRow.score;
     }
   });
@@ -95,9 +95,6 @@ function saveScore() {
       alert('Your Final Score is: ' + topSubtotal + bonus + bottomSubtotal);
     }
     loadDice();
-    // throws reset
-    //dice reset
-    //load dicePanel
   }
 }
 
