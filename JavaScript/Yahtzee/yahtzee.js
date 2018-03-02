@@ -124,8 +124,6 @@ function calculateScores() {
           scoreCardRow.score = sumOfDice(scoreCardRow.scoreMath[1]);
         }
       }
-    } else {
-      scoreCardRow.score = 0;
     }
   });
   loadScorecard();
@@ -145,11 +143,27 @@ function conditionIsMet(condition) {
 }
 
 function ofAKind(condition) {
-  return false;
+  counter = 0;
+  for (i = 0; i < yahtzee.dice.length; i++) {
+    counter = 0;
+    for (j = 0; j < yahtzee.dice.length; j++) {
+      if (yahtzee.dice[i].sideUp == yahtzee.dice[j].sideUp) {
+        counter ++;
+      }
+    }
+    if (condition[1] <= counter) {
+      return true;
+    } else {
+      counter = 0;
+      return false;
+    }
+  }
 }
 
 function inARow(condition) {
-  return false;
+  yahtzee.dice.forEach(function(die) {
+
+  });
 }
 
 function sumOfDice(valueToMatch) {
