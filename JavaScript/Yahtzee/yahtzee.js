@@ -154,10 +154,10 @@ function ofAKind(condition) {
     if (condition[1] <= counter) {
       return true;
     } else {
-      counter = 0;
       return false;
     }
   }
+  return false;
 }
 
 function inARow(condition) {
