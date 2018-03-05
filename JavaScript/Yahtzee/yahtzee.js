@@ -4,6 +4,17 @@ function setup() {
   loadScorecard();
 }
 
+function loadModal() {
+  document.getElementsByClassName('modal-wrapper')[0].style.display = 'block';
+}
+
+function closeModal() {
+  name = document.getElementById('nameInput').value;
+  document.getElementById('name').innerHTML = name;
+  document.getElementsByClassName('modal-wrapper')[0].style.display = 'none';
+}
+
+
 function loadPlayerInfo() {
   document.getElementById("playerName").innerHTML = yahtzee.player.name;
   document.getElementById("picture").src = yahtzee.player.avatar;

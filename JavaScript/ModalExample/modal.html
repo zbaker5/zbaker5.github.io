@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>Modal Example</title>
+  <link rel="stylesheet" type="text/css" href="modal.css">
+  <script src="modal.js"></script>
+</head>
+
+<body>
+
+  <p>This is a modal example!</p>
+  <button onclick="loadModal()" id="openModal">Open Modal</button>
+  <hr>
+  <label id="name"></label>
+  <br>
+  <img id="avatar">
+
+  <div class="modal-wrapper">
+      <div class="modal-content">
+        <label>Enter your name: <input id="nameInput" type="text"></label>
+        <button onclick="closeModal()">Play Yahtzee!</button>
+
+        <br>
+        <input type="radio" name="avatar" value="https://lorempixel.com/200/200/people/6/" checked><img src="https://lorempixel.com/200/200/people/6/">
+        <input type="radio" name="avatar" value="https://lorempixel.com/200/200/people/2/"><img src="https://lorempixel.com/200/200/people/2/">
+        <input type="radio" name="avatar" value="https://lorempixel.com/200/200/people/4/"><img src="https://lorempixel.com/200/200/people/4/">
+        <input type="radio" name="avatar" value="https://lorempixel.com/200/200/people/7/"><img src="https://lorempixel.com/200/200/people/7/">
+
+      </div>
+
+  </div>
+
+</body>
+
+
+
+
+</html>
