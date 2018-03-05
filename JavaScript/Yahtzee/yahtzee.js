@@ -9,11 +9,13 @@ function loadModal() {
 }
 
 function closeModal() {
-  yahtzee.player.name = document.getElementById('nameInput').value;
-  document.getElementsByClassName('modal-wrapper')[0].style.display = 'none';
+  if (name.length >= 0) {
+    yahtzee.player.name = document.getElementById('nameInput').value;
+    document.getElementsByClassName('modal-wrapper')[0].style.display = 'none';
 
-  yahtzee.player.avatar = document.querySelector('input[name=avatar][checked]').value;
-  loadPlayerInfo();
+    yahtzee.player.avatar = document.querySelector('input[name=avatar][checked]').value;
+    loadPlayerInfo();
+  }
 }
 
 
