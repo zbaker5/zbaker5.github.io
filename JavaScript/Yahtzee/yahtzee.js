@@ -1,5 +1,5 @@
 function setup() {
-  loadPlayerInfo();
+  loadModal();
   loadDice();
   loadScorecard();
 }
@@ -9,9 +9,11 @@ function loadModal() {
 }
 
 function closeModal() {
-  name = document.getElementById('nameInput').value;
-  document.getElementById('name').innerHTML = name;
+  yahtzee.player.name = document.getElementById('nameInput').value;
   document.getElementsByClassName('modal-wrapper')[0].style.display = 'none';
+
+  yahtzee.player.avatar = document.querySelector('input[name=avatar][checked]').value;
+  loadPlayerInfo();
 }
 
 

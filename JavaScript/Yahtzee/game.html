@@ -11,22 +11,25 @@
 
 <body onload="setup()">
 
-  <button onclick="loadModal()" id="openModal">Change name and avatar!</button>
-  <hr>
+
   <label id="name"></label>
   <br>
   <img id="avatar">
 
   <div class="modal-wrapper">
       <div class="modal-content">
-        <label>Enter your name: <input id="nameInput" type="text"></label>
-        <button onclick="closeModal()">Play Yahtzee!</button>
+				<div class="modalUpper">
+        	<label>Enter your name: <input id="nameInput" type="text"></label>
+        	<button onclick="closeModal()">Play Yahtzee!</button>
+				</div>
 
+			<div class="modalLower">
         <br>
         <input type="radio" name="avatar" value="" checked><img class="avatarImg" src="https://lorempixel.com/200/200/people/6/">
         <input type="radio" name="avatar" value=""><img class="avatarImg" src="https://lorempixel.com/200/200/people/2/">
         <input type="radio" name="avatar" value=""><img class="avatarImg" src="https://lorempixel.com/200/200/people/4/">
         <input type="radio" name="avatar" value=""><img class="avatarImg" src="https://lorempixel.com/200/200/people/7/">
+			</div>
 
       </div>
 
@@ -40,7 +43,8 @@
 		</div>
 		<div class="avatar">
       <img id="picture" src="./images/defaultAvatar.png"><br>
-      <label id="playerName">Name</label>
+      <label id="playerName">Name</label><br>
+			<button onclick="loadModal()" id="openModal">Change Player!</button>
     </div>
 		<div class="scoreCard">
 			<table>
