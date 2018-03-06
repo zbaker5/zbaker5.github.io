@@ -110,7 +110,7 @@ function saveScore() {
       document.getElementById('turnsRemain').innerHTML = 'Turns Remaining: ' + yahtzee.turnsRemaining;
     }
     if (yahtzee.turnsRemaining == 0) {
-      alert('Your Final Score is: ' + topSubtotal + bonus + bottomSubtotal);
+      alert ('Your Final Score Is: ' yahtzee.finalScore);
     }
     loadDice();
   }

@@ -103,10 +103,6 @@ body {
   border-radius: 10px;
 }
 
-.saved {
-  border: 5px solid green;
-}
-
 .dice button {
   font-size: 1.5em;
   padding: 10px;
@@ -184,8 +180,8 @@ table, tr, td, th {
 }
 
 .scored {
-  background-color: yellow;
-  color: black;
+  background-color: green;
+  color: white;
 }
 
 .scored:hover {
@@ -196,11 +192,6 @@ table, tr, td, th {
   background-color: #156Aa4;
 }
 
-.scored {
-  border: 3px solid green;
-  color: black;
-  background-color: yellow;
-}
 
 .unscored {
   color: black;
