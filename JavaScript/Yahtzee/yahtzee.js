@@ -73,7 +73,7 @@ function loadScorecard() {
       bottomSubtotal += scoreCardRow.score;
     }
   });
-  buildScoreCardRow('Total Score: ', topSubtotal + bonus + bottomSubtotal, 'totals', false, 0);
+  buildScoreCardRow('Total Score: ', (topSubtotal + bonus + bottomSubtotal), 'totals', false, 0);
 }
 
 
