@@ -13,7 +13,10 @@ function closeModal() {
     yahtzee.player.name = document.getElementById('nameInput').value;
     document.getElementsByClassName('modal-wrapper')[0].style.display = 'none';
 
-    yahtzee.player.avatar = document.querySelector('input[name=avatar][checked]').value;
+    yahtzee.player.avatar = document.querySelector('input[name="avatar"]:checked').value;
+
+
+
     loadPlayerInfo();
   }
 }
@@ -197,4 +200,12 @@ function saveDie(dieIndex) {
     yahtzee.dice[dieIndex].saved = !yahtzee.dice[dieIndex].saved
     loadDice();
   }
+}
+
+function loadModalTwo() {
+  document.getElementsByClassName('modalTwo-wrapper')[0].style.display = 'block';
+}
+
+function closeModalTwo() {
+  document.getElementsByClassName('modalTwo-wrapper')[0].style.display = 'none';
 }

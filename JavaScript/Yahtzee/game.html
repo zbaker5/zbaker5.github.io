@@ -21,27 +21,37 @@
 
 			<div class="modalLower">
         <br>
-        <input type="radio" name="avatar" value="" checked><img class="avatarImg" src="https://lorempixel.com/200/200/people/6/">
-        <input type="radio" name="avatar" value=""><img class="avatarImg" src="https://lorempixel.com/200/200/people/2/">
-        <input type="radio" name="avatar" value=""><img class="avatarImg" src="https://lorempixel.com/200/200/people/4/">
-        <input type="radio" name="avatar" value=""><img class="avatarImg" src="https://lorempixel.com/200/200/people/7/">
+        <input type="radio" name="avatar" value="https://lorempixel.com/200/200/people/6/"><img class="avatarImg" src="https://lorempixel.com/200/200/people/6/">
+        <input type="radio" name="avatar" value="https://lorempixel.com/200/200/people/2/"><img class="avatarImg" src="https://lorempixel.com/200/200/people/2/">
+        <input type="radio" name="avatar" value="https://lorempixel.com/200/200/people/4/" checked><img class="avatarImg" src="https://lorempixel.com/200/200/people/4/">
+        <input type="radio" name="avatar" value="https://lorempixel.com/200/200/people/7/"><img class="avatarImg" src="https://lorempixel.com/200/200/people/7/">
+				<input type="radio" name="avatar" value="https://lorempixel.com/200/200/people/8/"><img class="avatarImg" src="https://lorempixel.com/200/200/people/8/">
+				<input type="radio" name="avatar" value="https://lorempixel.com/200/200/people/1/"><img class="avatarImg" src="https://lorempixel.com/200/200/people/1/">
+				<input type="radio" name="avatar" value="https://lorempixel.com/200/200/people/3/"><img class="avatarImg" src="https://lorempixel.com/200/200/people/3/">
 			</div>
 
       </div>
 
   </div>
 
+	<div class="modalTwo-wrapper">
+		<div class="modalTwo-content">
+			<label>Are you sure you want to start a new game?</label><br>
+			<button id='yes' onclick="window.location.reload()">yes</button><button id='no' onclick="closeModalTwo()">no</button>
+		</div>
+	</div>
 
   <div class="wrapper">
     <div class="title"><label>Yahtzee</label>
     </div>
-		<div class="newGame"><button>New Game</button>
+		<div class="newGame"><button onclick="loadModalTwo()">New Game</button>
 		</div>
 		<div class="avatar">
-      <img id="picture" src="./images/defaultAvatar.png"><br>
-      <label id="playerName">Name</label><br>
+      <img id="picture" src="./images/defaultAvatar.png"><br><hr>
+      <label id="playerName">Name</label><br><hr>
 			<button onclick="loadModal()" id="openModal">Change Player!</button>
     </div>
+			<label class="turns" id="turnsRemain"></label>
 		<div class="scoreCard">
 			<table>
 			<tr>
@@ -53,7 +63,6 @@
 			</tbody>
 			</table>
 		</div>
-		<label class="turns" id="turnsRemain"></label>
     <div class="dice">
       <img id="die0" onclick="saveDie(0)">
       <img id="die1" onclick="saveDie(1)">
@@ -62,8 +71,8 @@
       <img id="die4" onclick="saveDie(4)"><br>
       <button id="roll" onclick="rollDice()">Roll Dice!</button>
 			<div class="throwsRemaining">
-			<label id="rollsRemain"></label>
 			</div>
+			<label id="rollsRemain"></label>
     </div>
 		<label id="test"></label>
   </div>
