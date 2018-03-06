@@ -1,7 +1,6 @@
 yahtzee = {
   'turnsRemaining' : 3,
   'throwsRemainingInTurn' : 3,
-  'finalScore' : 0,
    'player' : {
      'name' : 'Zach',
      'avatar': 'https://lorempixel.com/200/200/people/2/'
