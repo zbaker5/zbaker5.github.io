@@ -1,6 +1,6 @@
 yahtzee = {
   'turnsRemaining' : 13,
-  'throwsRemainingInTurn' : 20,
+  'throwsRemainingInTurn' : 3,
   'finalScore' : 0,
    'player' : {
      'name' : 'Zach',
