@@ -9,7 +9,7 @@ function loadModal() {
 }
 
 function closeModal() {
-  if (name.length >= 0) {
+  if (document.getElementById('nameInput').value.length > 0) {
     yahtzee.player.name = document.getElementById('nameInput').value;
     document.getElementsByClassName('modal-wrapper')[0].style.display = 'none';
 
@@ -18,6 +18,8 @@ function closeModal() {
 
 
     loadPlayerInfo();
+  } else {
+    document.getElementById('nameInput').placeholder = 'Please enter a name';
   }
 }
 
@@ -73,7 +75,8 @@ function loadScorecard() {
       bottomSubtotal += scoreCardRow.score;
     }
   });
-  buildScoreCardRow('Total Score: ', (topSubtotal + bonus + bottomSubtotal), 'totals', false, 0);
+  yahtzee.finalScore = (topSubtotal + bonus + bottomSubtotal);
+  buildScoreCardRow('Total Score: ', (yahtzee.finalScore), 'totals', false, 0);
 }
 
 
@@ -110,7 +113,7 @@ function saveScore() {
       document.getElementById('turnsRemain').innerHTML = 'Turns Remaining: ' + yahtzee.turnsRemaining;
     }
     if (yahtzee.turnsRemaining == 0) {
-      alert ('Your Final Score Is: ' topSubtotal + bonus + bottomSubtotal);
+      alert ('Your Final Score Is: ' + yahtzee.finalScore);
     }
     loadDice();
   }
@@ -163,8 +166,7 @@ function conditionIsMet(condition) {
 function ofAKind(condition) {
   counter = 0;
   for (i = 0; i < yahtzee.dice.length; i++) {
-    counter = 0;
-    for (j = 0; j < yahtzee.dice.length; j++) {
+    for (j = 1; j < yahtzee.dice.length; j++) {
       if (yahtzee.dice[i].sideUp == yahtzee.dice[j].sideUp) {
         counter ++;
       }
@@ -175,13 +177,10 @@ function ofAKind(condition) {
       return false;
     }
   }
-  return false;
 }
 
 function inARow(condition) {
-  yahtzee.dice.forEach(function(die) {
-
-  });
+  return true;
 }
 
 function sumOfDice(valueToMatch) {

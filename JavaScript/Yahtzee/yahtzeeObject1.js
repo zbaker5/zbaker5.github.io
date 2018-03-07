@@ -1,9 +1,10 @@
 yahtzee = {
-  'turnsRemaining' : 3,
+  'turnsRemaining' : 13,
   'throwsRemainingInTurn' : 3,
+  'finalScore' : 0,
    'player' : {
      'name' : 'Zach',
-     'avatar': 'https://lorempixel.com/200/200/people/2/'
+     'avatar': 'http://i.pravatar.cc/150?img=1'
    },
   'dice' : [
     {

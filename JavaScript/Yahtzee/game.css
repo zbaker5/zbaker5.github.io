@@ -158,7 +158,7 @@ table, tr, td, th {
 #picture {
   width: 194px;
   text-align: center;
-  padding: 5px 5px 10px 3px;
+  padding: 5px 5px 5px 3px;
 }
 
 #playerName {
@@ -166,7 +166,7 @@ table, tr, td, th {
   text-align: center;
   font-size: 1.75em;
   color: white;
-  padding: 20px 72px;
+  padding-left: 15px;
 }
 
 .dark:hover {
@@ -186,6 +186,10 @@ table, tr, td, th {
 
 .scored:hover {
   cursor: pointer;
+}
+
+.saved {
+  border: 3px solid green;
 }
 
 .totals {
