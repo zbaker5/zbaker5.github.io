@@ -180,7 +180,20 @@ function ofAKind(condition) {
 }
 
 function inARow(condition) {
-  return true;
+  counterTwo = 0;
+  for (i = 0; i < yahtzee.dice.length; i++) {
+    for (j = 0; j <yahtzee.dice.length; j++) {
+      if (yahtzee.dice[i].sideUp == yahtzee.dice[j].sideUp + 1) {
+        counterTwo++
+      }
+    }
+  }
+  if (counterTwo == condition[1]) {
+    return true;
+  } else {
+    return false;
+    counterTwo = 0;
+  }
 }
 
 function sumOfDice(valueToMatch) {
