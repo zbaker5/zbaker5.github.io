@@ -185,7 +185,28 @@ function ofAKind(condition) {
 }
 
 function inARow(condition) {
-  counterTwo = 0;
+  if (condition[2] == 4) {
+    smallStraight();
+  }
+  if (condition[2] == 5) {
+    largeStraight();
+  }
+}
+
+function smallStraight() {
+  for (i=0; i>=2; i++) {
+    for (j=i; j>=i+3; j++) {
+      if (yahtzee.dice[j].sideUp)
+    }
+  }
+}
+
+function largeStraight() {
+  
+}
+
+
+/*  counterTwo = 0;
   for (i = 0; i < yahtzee.dice.length; i++) {
     for (j = 1; j <yahtzee.dice.length; j++) {
       if (i != j && i < j) {
@@ -201,8 +222,8 @@ function inARow(condition) {
     }
   }
   return false;
-  counterTwo = 0;
-}
+  counterTwo = 0; */
+
 
 function sumOfDice(valueToMatch) {
   total = 0;
