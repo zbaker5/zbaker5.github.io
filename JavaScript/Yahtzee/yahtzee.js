@@ -198,9 +198,9 @@ function inARow(condition) {
 
 function smallStraight() {
   anArray = yahtzee.dice.sideUp;
-  if (anArray == [1, 2, 3, 4] || [2, 3, 4, 5] || [3, 4, 5, 6]) {
+  if (anArray.sort() == [1, 2, 3, 4] || [2, 3, 4, 5] || [3, 4, 5, 6]) {
    return true; 
-  }
+  } return false;
   
   /* for (i=0; i<=2; i++) {
     counterThree = 0;
@@ -214,9 +214,9 @@ function smallStraight() {
 
 function largeStraight() {
   anArrayTwo = yahtzee.dice.sideUp;
-  if (anArrayTwo = [1, 2, 3, 4, 5] || [2, 3, 4, 5, 6]) {
+  if (anArrayTwo.sort() = [1, 2, 3, 4, 5] || [2, 3, 4, 5, 6]) {
     return true;
-  }
+  } return false;
   /*for (i=0; i<=1; i++) {
     counterThree = 0;
     for (j=i; j<=i+4; j++) {
