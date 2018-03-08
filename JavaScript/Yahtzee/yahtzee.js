@@ -166,9 +166,6 @@ function conditionIsMet(condition) {
 }
 
 function ofAKind(condition) {
-  if (yahtzee.dice[0].sideUp == yahtzee.dice[1].sideUp && yahtzee.dice[2].sideUp && yahtzee.dice[3].sideUp && yahtzee.dice[4].sideUp && yahtzee.dice[5].sideUp) {
-   return true; 
-  }
   counter = 0;
   for (i = 0; i < yahtzee.dice.length; i++) {
     for (j = 1; j < yahtzee.dice.length; j++) {
@@ -188,20 +185,25 @@ function ofAKind(condition) {
 }
 
 function inARow(condition) {
-  if (condition[2] == 4) {
-    smallStraight();
+  if (condition[1] == 4) {
+    return smallStraight();
   }
-  if (condition[2] == 5) {
-    largeStraight();
+  if (condition[1] == 5) {
+    return largeStraight();
   }
 }
 
 function smallStraight() {
-  anArray = yahtzee.dice.sideUp;
-  if (anArray.sort() == [1, 2, 3, 4] || [2, 3, 4, 5] || [3, 4, 5, 6]) {
-   return true; 
-  } return false;
-  
+  test1 = [];
+  for (i=0; i<yahtzee.dice.length; i++) {
+    test1.push(yahtzee.dice[i].sideUp);
+  }
+    test1.sort();
+    if (test1 = [1, 2, 3, 4] || [2, 3, 4, 5] || [3, 4, 5, 6]) {
+      return true;
+    }
+    return false;
+}
   /* for (i=0; i<=2; i++) {
     counterThree = 0;
     for (j=i; j<=i+3; j++) {
@@ -210,22 +212,27 @@ function smallStraight() {
     }
     return false;
   }*/
-}
 
 function largeStraight() {
-  anArrayTwo = yahtzee.dice.sideUp;
-  if (anArrayTwo.sort() = [1, 2, 3, 4, 5] || [2, 3, 4, 5, 6]) {
-    return true;
-  } return false;
-  /*for (i=0; i<=1; i++) {
-    counterThree = 0;
-    for (j=i; j<=i+4; j++) {
-      if(yahtzee.dice[j].sideUp == counterThree)
-        return true;
+  test2 = [];
+  for (i=0; i<yahtzee.dice.length; i++) {
+    test2.push(yahtzee.dice[i].sideUp);
+  }
+    test2.sort();
+    if (test2 = [1, 2, 3, 4] || [2, 3, 4, 5] || [3, 4, 5, 6]) {
+      return true;
     }
     return false;
-  } */
-}
+  }
+
+/*for (i=0; i<=1; i++) {
+  counterThree = 0;
+  for (j=i; j<=i+4; j++) {
+    if(yahtzee.dice[j].sideUp == counterThree)
+      return true;
+  }
+  return false;
+} */
 
 
 /*  counterTwo = 0;
