@@ -194,15 +194,25 @@ function inARow(condition) {
 }
 
 function smallStraight() {
-  for (i=0; i>=2; i++) {
-    for (j=i; j>=i+3; j++) {
-      if (yahtzee.dice[j].sideUp)
+  for (i=0; i<=2; i++) {
+    counterThree = 0;
+    for (j=i; j<=i+3; j++) {
+      if (yahtzee.dice[j].sideUp == counterThree)
+        return true;
     }
+    return false;
   }
 }
 
 function largeStraight() {
-  
+  for (i=0; i<=1; i++) {
+    counterThree = 0;
+    for (j=i; j<=i+4; j++) {
+      if(yahtzee.dice[j].sideUp == counterThree)
+        return true;
+    }
+    return false;
+  } 
 }
 
 
