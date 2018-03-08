@@ -141,9 +141,11 @@ function calculateScores() {
         if (scoreCardRow.scoreMath[0] == 'const') {
           scoreCardRow.score = scoreCardRow.scoreMath[1];
         }
-        if (scoreCardRow.scoreMath[0] == 'sum') {
-          scoreCardRow.score = sumOfDice(scoreCardRow.scoreMath[1]);
-        }
+          if (scoreCardRow.scoreMath[0] == 'sum') {
+            scoreCardRow.score = sumOfDice(scoreCardRow.scoreMath[1]);
+          }
+      } else {
+        scoreCardRow.score = 0;
       }
     }
   });
@@ -167,33 +169,39 @@ function ofAKind(condition) {
   counter = 0;
   for (i = 0; i < yahtzee.dice.length; i++) {
     for (j = 1; j < yahtzee.dice.length; j++) {
-      if (yahtzee.dice[i].sideUp == yahtzee.dice[j].sideUp) {
-        counter ++;
+      if (i != j && i < j) {
+        if (yahtzee.dice[i].sideUp == yahtzee.dice[j].sideUp) {
+          counter ++;
+          if (condition[1] <= counter) {
+            return true;
+            counter = 0;
+          }
+        }
       }
     }
-    if (condition[1] <= counter) {
-      return true;
-    } else {
-      return false;
-    }
   }
+  return false;
+  counter = 0;
 }
 
 function inARow(condition) {
   counterTwo = 0;
   for (i = 0; i < yahtzee.dice.length; i++) {
-    for (j = 0; j <yahtzee.dice.length; j++) {
-      if (yahtzee.dice[i].sideUp == yahtzee.dice[j].sideUp + 1) {
-        counterTwo++
+    for (j = 1; j <yahtzee.dice.length; j++) {
+      if (i != j && i < j) {
+        if (yahtzee.dice[i].sideUp != yahtzee.dice[j].sideUp) {
+          if (yahtzee.dice[i].sideUp == yahtzee.dice[j].sideUp + 1 || yahtzee.dice[j].sideUp - 1) {
+            counterTwo++
+            if (condition[1] <= counterTwo) {
+              return true;
+            }
+          }
+        }
       }
     }
   }
-  if (counterTwo == condition[1]) {
-    return true;
-  } else {
-    return false;
-    counterTwo = 0;
-  }
+  return false;
+  counterTwo = 0;
 }
 
 function sumOfDice(valueToMatch) {
