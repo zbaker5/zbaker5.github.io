@@ -105,7 +105,7 @@ body {
   font-size: 1.8em;
   text-align: center;
   padding: 25px;
-  margin: 15px 50px 15px 0px;
+  margin: 50px 50px 15px 0px;
   border-radius: 25px;
 }
 
@@ -287,7 +287,7 @@ table, tr, td, th {
   padding: 15px;
   border: 3px solid white;
   border-radius: 25px;
-  margin: 200px 15px 0px 35%;
+  margin: 120px 15px 0px 35%;
 }
 
 .rules label {
@@ -306,13 +306,15 @@ table, tr, td, th {
 
 .moreInfo label {
   color: white;
-  font-size: 1.5em;
+  font-size: 2em;
+  margin-bottom: 50px;
 }
 
 .moreInfo img {
   background-color: #156Aa4;
   border-radius: 25px;
-  margin: 15px 25px 15px 125px;
-  width: 250px;
-  height: 100px;
+  margin: 15px 40%;
+  padding: 15px;
+  width: 200px;
+  height: 75px;
 }
