@@ -108,6 +108,7 @@ function saveScore() {
       die.sideUp = 0;
       die.saved = false;
     });
+    buildScoreCardRow();
     if (yahtzee.turnsRemaining > 0) {
       yahtzee.turnsRemaining -= 1;
       document.getElementById('turnsRemain').innerHTML = 'Turns Remaining: ' + yahtzee.turnsRemaining;
@@ -199,19 +200,30 @@ function smallStraight() {
     test1.push(yahtzee.dice[i].sideUp);
   }
     test1.sort();
-    if (test1 = [1, 2, 3, 4] || [2, 3, 4, 5] || [3, 4, 5, 6]) {
+    newArr = [];
+    for (i=0; i<test1.length; i++) {
+      if (newArr.indexOf(test1[i]) == -1) {
+        newArr.push(test1[i]);
+      }
+    }
+    if (newArr.toString() == [1, 2, 3, 4].toString()) {
       return true;
+    } else if(newArr.toString() == [2, 3, 4, 5].toString()) {
+      return true;
+    } else if(newArr.toString() == [3, 4, 5, 6].toString()) {
+      return true;
+    } else if(newArr.toString() == [1, 2, 3, 4, 5].toString()) {
+      return true;
+    } else if(newArr.toString() == [2, 3, 4, 5, 6].toString()) {
+      return true;
+    } else if(newArr.toString() == [1, 2, 3, 4, 6].toString()) {
+      return true;
+    } else if(newArr.toString() == [1, 3, 4, 5, 6].toString()) {
+      return true;
+    } else {
+      return false;
     }
-    return false;
 }
-  /* for (i=0; i<=2; i++) {
-    counterThree = 0;
-    for (j=i; j<=i+3; j++) {
-      if (yahtzee.dice[j].sideUp == counterThree)
-        return true;
-    }
-    return false;
-  }*/
 
 function largeStraight() {
   test2 = [];
@@ -219,39 +231,20 @@ function largeStraight() {
     test2.push(yahtzee.dice[i].sideUp);
   }
     test2.sort();
-    if (test2 = [1, 2, 3, 4] || [2, 3, 4, 5] || [3, 4, 5, 6]) {
-      return true;
-    }
-    return false;
-  }
-
-/*for (i=0; i<=1; i++) {
-  counterThree = 0;
-  for (j=i; j<=i+4; j++) {
-    if(yahtzee.dice[j].sideUp == counterThree)
-      return true;
-  }
-  return false;
-} */
-
-
-/*  counterTwo = 0;
-  for (i = 0; i < yahtzee.dice.length; i++) {
-    for (j = 1; j <yahtzee.dice.length; j++) {
-      if (i != j && i < j) {
-        if (yahtzee.dice[i].sideUp != yahtzee.dice[j].sideUp) {
-          if (yahtzee.dice[i].sideUp == yahtzee.dice[j].sideUp + 1 || yahtzee.dice[j].sideUp - 1) {
-            counterTwo++
-            if (condition[1] <= counterTwo) {
-              return true;
-            }
-          }
-        }
+    newArr2 = [];
+    for (i=0; i<test2.length; i++) {
+      if (newArr2.indexOf(test2[i]) == -1) {
+        newArr2.push(test2[i]);
       }
     }
+    if (test2.toString() == [1, 2, 3, 4, 5].toString()) {
+      return true;
+    } else if (test2.toString() == [2, 3, 4, 5, 6].toString()) {
+      return true;
+    } else {
+      return false;
+    }
   }
-  return false;
-  counterTwo = 0; */
 
 
 function sumOfDice(valueToMatch) {
