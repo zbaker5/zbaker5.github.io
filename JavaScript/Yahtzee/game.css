@@ -223,7 +223,7 @@ table, tr, td, th {
 
 #rollsRemain {
   padding: 25px 15px 0px 25px;
-  font-size: 1.2em;
+  font-size: 1.35em;
   float: left;
   color: white;
 }
@@ -286,4 +286,9 @@ table, tr, td, th {
   color: white;
   font-size: 3em;
   padding: 20px;
+}
+
+input[type="radio" i] {
+    padding: 75px 85px 0px 0px;
+    margin: 3px 3px 0px 5px;
 }

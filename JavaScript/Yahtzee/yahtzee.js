@@ -63,8 +63,8 @@ function loadScorecard() {
   });
   buildScoreCardRow('Top Subtotal:', topSubtotal, 'totals', false, 0);
 
-  if(topSubtotal >= 65) {
-    bonus = 30;
+  if(topSubtotal >= 63) {
+    bonus = 35;
   } else {
     bonus = 0;
   }
@@ -177,7 +177,10 @@ function ofAKind(condition) {
       if (i != j && i < j) {
         if (yahtzee.dice[i].sideUp == yahtzee.dice[j].sideUp) {
           counter ++;
-          if (condition[1] <= counter) {
+          if (condition[1] == 2) {
+            return fullHouse();
+          }
+          if (condition[1] <= counter && condition[1] != 2) {
             return true;
             counter = 0;
           }
@@ -189,6 +192,24 @@ function ofAKind(condition) {
   counter = 0;
 }
 
+function fullHouse() {
+  full = [];
+  for (i=0; i<yahtzee.dice.length; i++) {
+    full.push(yahtzee.dice[i].sideUp);
+  }
+    full.sort();
+    testFull = [];
+    for (i=0; i<full.length; i++) {
+      if (testFull.indexOf(full[i]) == -1) {
+        testFull.push(full[i]);
+      }
+    }
+    if (testFull.length == 2) {
+      return true;
+    } else {
+      return false;
+    }
+}
 
 function inARow(condition) {
   if (condition[1] == 4) {
