@@ -287,11 +287,32 @@ table, tr, td, th {
   padding: 15px;
   border: 3px solid white;
   border-radius: 25px;
-  margin: 350px 15px 0px 35%;
+  margin: 200px 15px 0px 35%;
 }
 
 .rules label {
   color: white;
   font-size: 3em;
   padding: 20px;
+}
+
+.moreInfo {
+  width: 60%;
+  padding: 15px;
+  border: 3px solid white;
+  border-radius: 25px;
+  margin: 75px 15px 0px 35%;
+}
+
+.moreInfo label {
+  color: white;
+  font-size: 1.5em;
+}
+
+.moreInfo img {
+  background-color: #156Aa4;
+  border-radius: 25px;
+  margin: 15px 25px 15px 125px;
+  width: 250px;
+  height: 100px;
 }
