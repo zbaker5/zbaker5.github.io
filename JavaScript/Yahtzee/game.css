@@ -1,5 +1,8 @@
 body {
-  background-color: grey;
+  background-color: rgba(255, 255, 255, .3);
+  background-image: url('./images/background3.jpg');
+  background-repeat: no-repeat;
+  background-size: 1920px 1050px;
 }
 
 .modal-wrapper {
@@ -16,9 +19,10 @@ body {
 .modal-content {
   margin: 15% auto;
   width: 40%;
-  background-color: white;
+  background-color: #9EEDFA;
   padding: 20px 15px;
   text-align: center;
+  border: solid 3px black;
   border-radius: 25px;
   z-index: 2;
 }
@@ -30,6 +34,15 @@ body {
 
 .modalUpper label {
   font-size: 1.5em;
+}
+
+.modalUpper button {
+  padding: 5px 10px;
+  margin-left: 20px;
+  background-color: #258AC4;
+  color: white;
+  font-size: 1.1em;
+  border-radius: 25px;
 }
 
 #nameInput {
@@ -44,6 +57,8 @@ body {
   font-size: 1.1em;
   border-radius: 10px;
   text-align: center;
+  color: white;
+  background-color: #258AC4;
 }
 
 .modalUpper {
@@ -59,29 +74,31 @@ body {
 }
 
 .title {
-  border: 3px solid black;
-  font-size: 3em;
+  border: 3px solid white;
+  font-size: 3.5em;
   text-align: center;
-  background-color: darkgrey;
+  background-color: #243065;
+  border-radius: 25px;
   color: white;
-  padding: 25px;
+  padding: 15px;
 }
 
 .avatar {
-  border: 3px solid black;
+  border: 3px solid white;
   float: left;
   margin: 15px 50px;
-  background-color: green;
   width: 200px;
 }
 
 .newGame button {
   float: right;
-  font-size: 1.5em;
+  color: white;
+  background-color: #258AC4;
+  font-size: 1.8em;
   text-align: center;
   padding: 25px;
   margin: 15px 50px 15px 0px;
-  border-radius: 15px;
+  border-radius: 25px;
 }
 
 .turns {
@@ -90,11 +107,12 @@ body {
 }
 
 .dice {
-  border: 3px solid black;
+  border: 3px solid white;
   margin: 25px 15% 25px 35%;
   width: 45%;
   text-align: center;
-  background-color: darkgrey;
+  background-color: #12111E;
+  border-radius: 25px;
 }
 
 .dice img {
@@ -106,7 +124,7 @@ body {
 .dice button {
   font-size: 1.5em;
   padding: 10px;
-  margin: 25px 10px 25px 80%;
+  margin: 0px 10px 25px 80%;
   border-radius: 25px;
   background-color: #258AC4;
   color: white;
@@ -117,7 +135,7 @@ button:hover {
 }
 
 .scoreCard {
-  margin: 15px 35px;
+  margin: 0px 35px;
 }
 
 table {
@@ -132,11 +150,6 @@ table, tr, td, th {
   color: white;
   border-collapse: collapse;
   text-align: center;
-}
-
-.dark {
-  background-color: yellow;
-  color: black;
 }
 
 #die0:hover {
@@ -169,14 +182,10 @@ table, tr, td, th {
   padding-left: 15px;
 }
 
-.dark:hover {
-  background-color: #156Aa4;
-  cursor: pointer;
-}
-
 .throwsRemaining {
   float: right;
   font-size: 1.5em;
+  color: white;
 }
 
 .scored {
@@ -199,7 +208,7 @@ table, tr, td, th {
 
 .unscored {
   color: black;
-  background-color: yellow;
+  background-color: #F1C454;
 }
 
 .unscored:hover {
@@ -208,13 +217,15 @@ table, tr, td, th {
 
 #turnsRemain {
   margin: 10px auto;
-  padding: 15px 40px;
+  padding: 150px 40px 0px 40px;
+  color: white;
 }
 
 #rollsRemain {
-  padding: 15px;
+  padding: 25px 15px 0px 25px;
   font-size: 1.2em;
   float: left;
+  color: white;
 }
 
 .modalTwo-wrapper {
@@ -231,9 +242,48 @@ table, tr, td, th {
 .modalTwo-content {
   margin: 15% auto;
   width: 40%;
-  background-color: white;
+  background-color: #9EEDFA;
+  border: 3px solid black;
   padding: 20px 15px;
   text-align: center;
   border-radius: 25px;
   z-index: 2;
+}
+
+.modalTwo-content {
+  font-size: 1.5em;
+}
+
+#yes {
+  color: white;
+  font-size: 1.25em;
+  background-color: #258AC4;
+  margin-top: 25px;
+  margin-right: 15px;
+  border-radius: 15px;
+  padding: 10px 25px;
+}
+
+#no {
+  color: white;
+  font-size: 1.25em;
+  background-color: #258AC4;
+  margin-top: 25px;
+  margin-left: 15px;
+  border-radius: 15px;
+  padding: 10px 25px;
+}
+
+.rules {
+  width: 60%;
+  padding: 15px;
+  border: 3px solid white;
+  border-radius: 25px;
+  margin: 350px 15px 0px 35%;
+}
+
+.rules label {
+  color: white;
+  font-size: 3em;
+  padding: 20px;
 }

@@ -56,7 +56,9 @@ function loadScorecard() {
   yahtzee.scoreCard.forEach(function(scoreCardRow, index) {
     if (scoreCardRow.top) {
       buildScoreCardRow(scoreCardRow.title, scoreCardRow.score, (scoreCardRow.scoreRecorded ? 'scored' : 'unscored'), !scoreCardRow.scoreRecorded, index);
-      topSubtotal += scoreCardRow.score ;
+      if (scoreCardRow.scoreRecorded){
+        topSubtotal += scoreCardRow.score ;
+      }
     }
   });
   buildScoreCardRow('Top Subtotal:', topSubtotal, 'totals', false, 0);
@@ -72,7 +74,9 @@ function loadScorecard() {
   yahtzee.scoreCard.forEach(function(scoreCardRow, index) {
     if (!scoreCardRow.top) {
       buildScoreCardRow(scoreCardRow.title, scoreCardRow.score, (scoreCardRow.scoreRecorded ? 'scored' : 'unscored'), !scoreCardRow.scoreRecorded, index);
-      bottomSubtotal += scoreCardRow.score;
+      if (scoreCardRow.scoreRecorded) {
+        bottomSubtotal += scoreCardRow.score;
+      }
     }
   });
   yahtzee.finalScore = (topSubtotal + bonus + bottomSubtotal);
@@ -108,7 +112,7 @@ function saveScore() {
       die.sideUp = 0;
       die.saved = false;
     });
-    buildScoreCardRow();
+    loadScorecard();
     if (yahtzee.turnsRemaining > 0) {
       yahtzee.turnsRemaining -= 1;
       document.getElementById('turnsRemain').innerHTML = 'Turns Remaining: ' + yahtzee.turnsRemaining;
@@ -184,6 +188,7 @@ function ofAKind(condition) {
   return false;
   counter = 0;
 }
+
 
 function inARow(condition) {
   if (condition[1] == 4) {
