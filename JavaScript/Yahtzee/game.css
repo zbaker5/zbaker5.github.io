@@ -2,7 +2,7 @@ body {
   background-color: rgba(255, 255, 255, .3);
   background-image: url('./images/background3.jpg');
   background-repeat: no-repeat;
-  background-size: 1920px 1050px;
+  background-size: 1920px 1080px;
 }
 
 .largeClick {
@@ -10,6 +10,12 @@ body {
   margin-right: 3px;
   background-color: #243065;
   border-radius: 15px;
+  cursor: pointer;
+}
+
+.selectAvatar {
+  font-size: 1.6em;
+  color: white;
 }
 
 .modal-wrapper {
@@ -40,7 +46,7 @@ body {
 }
 
 .modalUpper label {
-  font-size: 1.5em;
+  font-size: 1.6em;
   color: white;
 }
 

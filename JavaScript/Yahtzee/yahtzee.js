@@ -180,6 +180,9 @@ function ofAKind(condition) {
           if (condition[1] == 2) {
             return fullHouse();
           }
+          if (condition[1] == 5) {
+            return yahtzeeScore();
+          }
           if (condition[1] <= counter && condition[1] != 2) {
             return true;
             counter = 0;
@@ -190,6 +193,25 @@ function ofAKind(condition) {
   }
   return false;
   counter = 0;
+}
+
+function yahtzeeScore() {
+  yaht = [];
+  for (i=0; i<yahtzee.dice.length; i++) {
+    yaht.push(yahtzee.dice[i].sideUp);
+  }
+    yaht.sort();
+    testYaht = [];
+    for (i=0; i<yaht.length; i++) {
+      if (testYaht.indexOf(yaht[i]) == -1) {
+        testYaht.push(yaht[i]);
+      }
+    }
+    if (testYaht.length == 1) {
+      return true;
+    } else {
+      return false;
+    }
 }
 
 function fullHouse() {
