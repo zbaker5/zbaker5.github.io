@@ -214,6 +214,7 @@ function yahtzeeScore() {
     }
 }
 
+
 function fullHouse() {
   full = [];
   for (i=0; i<yahtzee.dice.length; i++) {
@@ -226,10 +227,24 @@ function fullHouse() {
         testFull.push(full[i]);
       }
     }
-    if (testFull.length == 2) {
+
+    counterFull = 0;
+    for (i = 0; i < yahtzee.dice.length; i++) {
+      for (j = 1; j < yahtzee.dice.length; j++) {
+        if (i != j && i < j) {
+          if (yahtzee.dice[i].sideUp == yahtzee.dice[j].sideUp) {
+            counterFull ++;
+          }
+        }
+      }
+    }
+
+    if (testFull.length == 2 && counterFull != 6) {
       return true;
+      counterFull = 0;
     } else {
       return false;
+      counterFull = 0;
     }
 }
 
